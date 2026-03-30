@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="container">
+    <div class="site-brand">
+      <a href="{{ site.baseurl | default: '/' }}" class="site-title">
+        {{ site.title | default: "My Site" }}
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{{ site.baseurl | default: '/' }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+            Home
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

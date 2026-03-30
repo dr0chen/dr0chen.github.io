@@ -2,3 +2,92 @@
 ---
 
 @use "base";
+
+/* 基础变量 */
+:root {
+  --header-bg: #ffffff;
+  --header-text: #1f2937;
+  --header-link: #4b5563;
+  --header-link-hover: #3b82f6;
+  --header-active: #3b82f6;
+  --border-color: #e5e7eb;
+  --container-max-width: 1200px;
+  --header-padding: 1rem;
+}
+
+/* 头部容器 */
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--header-padding) 0;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 品牌/标题 */
+.site-brand {
+  flex-shrink: 0;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--header-text);
+  transition: color 0.2s ease;
+}
+
+.site-title:hover {
+  color: var(--header-link-hover);
+}
+
+/* 导航菜单（桌面） */
+.site-nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--header-link);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--header-active);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--header-active);
+  border-radius: 2px;
+}
